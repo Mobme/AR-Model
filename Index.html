@@ -6,15 +6,15 @@
         function openARModel() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             
-            // Check if the device is iPhone/iPad (iOS)
+            // iPhone/iPad (iOS) - Open USDZ model
             if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 window.location.href = "https://mobme.github.io/AR-Model/Small_and_large_intestine.usdz";
             } 
-            // Check if the device is Android
+            // Android - Open GLB model in Scene Viewer
             else if (/android/i.test(userAgent)) {
                 window.location.href = "intent://arvr.google.com/scene-viewer/1.0?file=https://mobme.github.io/AR-Model/Small_and_large_intestine.glb#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;end;";
             } 
-            // Default fallback (if not iOS or Android)
+            // Default fallback
             else {
                 alert("AR model is only supported on iOS (Safari) and Android (Chrome).");
             }
